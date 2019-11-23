@@ -25,7 +25,7 @@ You can pass your session directory to `(new \SessionParser\SessionParser)::init
 
 You'll likely have to `sudo` the following command for it to work. Or just run as `root`. Whatever works for your ENV.
 
-`$ sudo php index.php`
+`$ sudo php -f index.php`
 
 Should return number of active sessions `¯\_(ツ)_/¯`
 
