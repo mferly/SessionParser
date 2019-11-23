@@ -4,10 +4,7 @@ declare(strict_types=1);
 try {
     require './autoload.php';
 
-    $sessionGcMaxlifetime = (int) @ini_get('session.gc_maxlifetime');
-    if (empty($sessionGcMaxlifetime)) $sessionGcMaxlifetime = 0;
-
-    echo 'Number of authenticated sessions: '. (new \SessionParser\SessionParser)::init($sessionGcMaxlifetime);
+    echo 'Number of authenticated sessions: '. (new \SessionParser\SessionParser)::init();
 } catch (\Exception $e){
     echo $e->getMessage();
 }

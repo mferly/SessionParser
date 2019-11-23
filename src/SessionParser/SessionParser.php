@@ -57,9 +57,13 @@ final class SessionParser implements SessionParserInterface
      * a default just in case. We use this to check length (in time()) of
      * authenticated session.
      *
+     * This default value is in place in the case that your ENV is blocking you
+     * from retrieving ini_get('session.gc_maxlifetime'). This default value
+     * should be the same value as seen in php.ini
+     *
      * @var int
      */
-    private static $sessionGcMaxlifetime = 3600;
+    private static $sessionGcMaxlifetime = 1440;
 
     /**
      * Initializes the program.
@@ -69,9 +73,12 @@ final class SessionParser implements SessionParserInterface
      * @method static int
      * @return int
      */
-    public static function init(int $sessionGcMaxlifetime, string $sessionFolderPath = ''): int
+    public static function init(string $sessionFolderPath = ''): int
     {
-        if (!empty($sessionGcMaxlifetime)) static::$sessionGcMaxlifetime = $sessionGcMaxlifetime;
+        if (function_exists('ini_get')) {
+            static::$sessionGcMaxlifetime = (int) @ini_get('session.gc_maxlifetime');
+        }
+
         if (!empty($sessionFolderPath)) static::$sessionFolderPath = $sessionFolderPath;
 
         return static::fileIterator();
