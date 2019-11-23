@@ -37,7 +37,7 @@ if (time() - $file->getCTime() <= static::$sessionGcMaxlifetime) {
 ```
 
 ## Prerequisites
-* PHP v7.x (tested on v7.3)
+* PHP v7.x (tested on v7.3.11)
 
 ## After Thoughts
 While this program will simply `echo` the result, there is no reason this cannot be modified to write the result to a file, database, emailed to a recipient, etc.
