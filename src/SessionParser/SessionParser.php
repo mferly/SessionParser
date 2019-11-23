@@ -61,6 +61,8 @@ final class SessionParser implements SessionParserInterface
      * from retrieving ini_get('session.gc_maxlifetime'). This default value
      * should be the same value as seen in php.ini
      *
+     * Note: this property value is in seconds.
+     *
      * @var int
      */
     private static $sessionGcMaxlifetime = 1440;
