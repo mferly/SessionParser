@@ -23,3 +23,9 @@ if (time() - $file->getCTime() <= static::$sessionGcMaxlifetime) {
 
 ## Prerequisites
 * PHP v7.x (tested on v7.3)
+
+## Licence
+[MIT](https://opensource.org/licenses/MIT)
+
+## Creator
+[mferly](https://www.reddit.com/user/mferly)
