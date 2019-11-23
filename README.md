@@ -40,7 +40,8 @@ if (time() - $file->getCTime() <= static::$sessionGcMaxlifetime) {
 While this program will simply `echo` the result, there is no reason this cannot be modified to write the result to a file, database, emailed to a recipient, etc.
 
 ## Contributing
-[PSR](https://www.php-fig.org/) must be followed.
+* [PSR](https://www.php-fig.org/) must be followed.
+* All classes **MUST** implement an interface. Pull requests with classes that do not implement an interface will be rejected.
 
 ## Licence
 [MIT](https://opensource.org/licenses/MIT)
