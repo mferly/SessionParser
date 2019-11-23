@@ -17,7 +17,7 @@ Due to permission issues you'll likely run into if you attempt to execute this f
 
 You'll want to have a look at `private static $needle = 'auth|b:1';` in [SessionParser.php](https://github.com/mferly/SessionParser/blob/master/SessionParser.php#L35) and make the necessary change to reflect your `$_SESSION` key. The Docblock has more info.
 
-You'll likely have to `sudo` the following command for it to work.
+You'll likely have to `sudo` the following command for it to work. Or just run as `root`. Whatever works for your ENV.
 
 `$ sudo php index.php`
 
