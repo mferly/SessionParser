@@ -5,6 +5,6 @@ try {
     require './src/autoload.php';
 
     echo 'Number of authenticated sessions: '. (new \SessionParser\SessionParser)::init();
-} catch (\Exception $e){
+} catch (\Exception $e) {
     echo $e->getMessage();
 }

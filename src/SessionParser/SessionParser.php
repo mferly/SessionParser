@@ -6,7 +6,8 @@ namespace SessionParser;
 /**
  * Class to parse session files for determining user authenticated sessions.
  *
- * @author mferly (https://www.reddit.com/user/mferly)
+ * @author mferly
+ * @link https://www.reddit.com/user/mferly
  * @license MIT (https://opensource.org/licenses/MIT)
  */
 final class SessionParser implements SessionParserInterface
@@ -89,8 +90,8 @@ final class SessionParser implements SessionParserInterface
     /**
      * Iterates through $sessionFolderPath and calls fileParser()
      *
-     * @method static int
-     * @return int on success, \Exception on error.
+     * @return int
+     * @throws \Exception
      */
     public static function directoryIterator(): int
     {
