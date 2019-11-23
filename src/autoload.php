@@ -8,7 +8,7 @@ declare(strict_types=1);
  * @return void
  */
  spl_autoload_register(function($className) {
-     $baseDir = __DIR__ . '/src/';
+     $baseDir = __DIR__ . '/';
      $className = str_replace('\\', DIRECTORY_SEPARATOR, $className);
      $file = $baseDir . $className . '.php';
 
