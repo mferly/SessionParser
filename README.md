@@ -4,6 +4,7 @@ Use this to iterate through active session files within the defined PHP sessions
 **Hint**: your sessions directory is probably located at `/var/lib/php/sessions/`
 
 * [Getting Started](#getting-started)
+* [Basic Usage](#basic-usage)
 * [Prerequisites](#prerequisites)
 * [After Thoughts](#after-thoughts)
 * [Licence](#licence)
@@ -16,6 +17,8 @@ Use this to iterate through active session files within the defined PHP sessions
 Due to permission issues you'll likely run into if you attempt to execute this from the browser, use CLI only.
 
 You'll want to have a look at `private static $needle = 'auth|b:1';` in [SessionParser.php](https://github.com/mferly/SessionParser/blob/master/SessionParser.php#L35) and make the necessary change to reflect your `$_SESSION` key. The Docblock has more info.
+
+## Basic Usage
 
 You'll likely have to `sudo` the following command for it to work. Or just run as `root`. Whatever works for your ENV.
 
@@ -35,6 +38,9 @@ if (time() - $file->getCTime() <= static::$sessionGcMaxlifetime) {
 
 ## After Thoughts
 While this program will simply `echo` the result, there is no reason this cannot be modified to write the result to a file, database, emailed to a recipient, etc.
+
+## Contributing
+[PSR](https://www.php-fig.org/) must be followed.
 
 ## Licence
 [MIT](https://opensource.org/licenses/MIT)
