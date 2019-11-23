@@ -21,6 +21,8 @@ You'll want to have a look at `private static $needle = 'auth|b:1';` in `Session
 
 ## Basic Usage
 
+You can pass your session directory to `(new \SessionParser\SessionParser)::init()` as an argument or just use the default as stated in `private static $sessionFolderPath = '/var/lib/php/sessions/';`
+
 You'll likely have to `sudo` the following command for it to work. Or just run as `root`. Whatever works for your ENV.
 
 `$ sudo php index.php`
