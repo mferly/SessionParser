@@ -17,7 +17,7 @@ Use this to iterate through active session files within the defined PHP sessions
 
 Due to permission issues you'll likely run into if you attempt to execute this from the browser, use CLI only.
 
-You'll want to have a look at `private static $needle = 'auth|b:1';` in [SessionParser.php](https://github.com/mferly/SessionParser/blob/master/SessionParser.php#L35) and make the necessary change to reflect your `$_SESSION` key. The Docblock has more info.
+You'll want to have a look at `private static $needle = 'auth|b:1';` in `SessionParser.php` and make the necessary change to reflect your `$_SESSION` key. The Docblock has more info.
 
 ## Basic Usage
 
