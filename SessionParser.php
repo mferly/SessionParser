@@ -111,7 +111,7 @@ final class SessionParser implements SessionParserInterface
                         fclose($handle);
 
                         if (false !== static::fileParser($sessionString)) {
-                            if (time() - $file->getCTime() <= static::$sessionGcMaxlifetime) {
+                            if (time() - $file->getMTime() <= static::$sessionGcMaxlifetime) {
                                 static::$counter++;
                             }
                         }
