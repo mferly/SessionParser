@@ -39,7 +39,7 @@ final class SessionParser implements SessionParserInterface
      * @description: this is the matching string per the session file to determine
      *               whether the session is authenticated or not.
      * @usage:  $_SESSION['auth'] = 1; writes 'auth|b:1' to a session file
-     *              located in the path you've set in static::$path.
+     *              located in the path you've set in static::$sessionFolderPath.
      *          $_SESSION['auth'] = 0; writes (updates) that session file to
      *              reflect that change: auth|b:0
      * @replace $_SESSION['auth'] with your program's $_SESSION key/index
@@ -49,7 +49,7 @@ final class SessionParser implements SessionParserInterface
     private static $needle = 'auth|b:1';
 
     /**
-     * @name $path
+     * @name $sessionFolderPath
      * @scope private
      * @type string
      * @description: path to the folder you want to iterate on
@@ -57,7 +57,7 @@ final class SessionParser implements SessionParserInterface
      *           Executing this script via browser (will not) should not work.
      *           Execute this script via CLI only.
      */
-    private static $path = '/var/lib/php/sessions/';
+    private static $sessionFolderPath = '/var/lib/php/sessions/';
 
     /**
      * @name $sessionGcMaxlifetime
@@ -82,7 +82,7 @@ final class SessionParser implements SessionParserInterface
     public static function init(int $sessionGcMaxlifetime, string $sessionFolderPath = ''): int
     {
         if (!empty($sessionGcMaxlifetime)) static::$sessionGcMaxlifetime = $sessionGcMaxlifetime;
-        if (!empty($sessionFolderPath)) static::$path = $sessionFolderPath;
+        if (!empty($sessionFolderPath)) static::$sessionFolderPath = $sessionFolderPath;
 
         return static::fileIterator();
     }
@@ -91,7 +91,7 @@ final class SessionParser implements SessionParserInterface
      * @name fileIterator()
      * @scope public
      * @type static method
-     * @description: iterates through static::$path folder
+     * @description: iterates through static::$sessionFolderPath folder
      * @return $counter int on success, null on error.
      */
     public static function fileIterator(): int
@@ -99,7 +99,7 @@ final class SessionParser implements SessionParserInterface
         try {
             static::$fileIterator = new \RecursiveIteratorIterator(
                 (new \RecursiveDirectoryIterator(
-                    static::$path,
+                    static::$sessionFolderPath,
                     \RecursiveDirectoryIterator::SKIP_DOTS)
                 ), \RecursiveIteratorIterator::LEAVES_ONLY);
 
@@ -126,7 +126,7 @@ final class SessionParser implements SessionParserInterface
             }
         } catch(\Exception $e) {
             throw new \Exception('
-                <p><b>' . static::$path . '</b> is not accessible</b>.</p>
+                <p><b>' . static::$sessionFolderPath . '</b> is not accessible</b>.</p>
                 <p>Check folder permissions/ownership.</p>
                 <p>Exception: '. $e->getMessage() . '</p>
             ');
