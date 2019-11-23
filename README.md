@@ -5,7 +5,7 @@ Use this to iterate through active session files within the defined PHP sessions
 
 ## Getting Started
 
-**WARNING**: Don't keep this file in a publicly accessible folder.
+**WARNING**: Don't keep these files in a `public` folder of any kind.
 
 Due to permission issues you'll likely run into if you attempt to execute this from the browser, use CLI only.
 
