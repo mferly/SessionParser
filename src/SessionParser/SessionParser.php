@@ -90,7 +90,7 @@ final class SessionParser implements SessionParserInterface
      * Iterates through $sessionFolderPath and calls fileParser()
      *
      * @method static int
-     * @return $counter int on success, null on error.
+     * @return int on success, \Exception on error.
      */
     public static function directoryIterator(): int
     {
@@ -104,6 +104,7 @@ final class SessionParser implements SessionParserInterface
             foreach (static::$fileIterator as $file) {
                 if ($file->isReadable()) {
                     if ($file->getSize() > 0) {
+
                         $handle = fopen($file->getPathname(), 'r');
                         $sessionString = fread($handle, $file->getSize());
                         fclose($handle);
