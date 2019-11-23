@@ -3,7 +3,13 @@ Use this to iterate through active session files within the defined PHP sessions
 
 **Hint**: your sessions directory is probably located at `/var/lib/php/sessions/`
 
-## Getting Started
+* [Getting Started](#getting-started)
+* [Prerequisites](#prerequisites)
+* [After Thoughts](#after-thoughts)
+* [Licence](#licence)
+* [Creator](#creator)
+
+## Getting Started (#getting-started)
 
 **WARNING**: Don't keep these files in a `public` folder of any kind.
 
@@ -24,14 +30,14 @@ if (time() - $file->getCTime() <= static::$sessionGcMaxlifetime) {
 }
 ```
 
-## Prerequisites
+## Prerequisites (#prerequisites)
 * PHP v7.x (tested on v7.3)
 
-## After Thoughts
+## After Thoughts (#after-thoughts)
 While this program will simply `echo` the result, there is no reason this cannot be modified to write the result to a file, database, emailed to a recipient, etc.
 
-## Licence
+## Licence (#licence)
 [MIT](https://opensource.org/licenses/MIT)
 
-## Creator
+## Creator (#creator)
 [mferly](https://www.reddit.com/user/mferly)
