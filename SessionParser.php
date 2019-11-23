@@ -26,7 +26,7 @@ final class SessionParser implements SessionParserInterface
 
     /**
      * @name $counter
-     * @scope public
+     * @scope private
      * @type int static
      * @description: holds counter of authenticated sessions
      */
