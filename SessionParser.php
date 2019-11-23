@@ -63,8 +63,12 @@ final class SessionParser implements SessionParserInterface
      * @name $sessionGcMaxlifetime
      * @scope private
      * @type int
-     * @default 3600 seconds (1 hour)
-     * @description: this is used to check length (in time()) of authenticated session
+     * @default 3600 seconds (1 hour) This should be overwritten by
+     *                                ini_get('session.gc_maxlifetime')
+     *                                as long as ini_get() is available per ENV.
+     * @description: This is used to check length (in time()) of authenticated session.
+     *               This should be coming from php.ini config automagically as
+     *               requested in index.php
      */
     private static $sessionGcMaxlifetime = 3600;
 
