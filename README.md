@@ -15,7 +15,7 @@ You'll likely have to `sudo` the following command for it to work.
 Should return number of active sessions `¯\_(ツ)_/¯`
 
 This is where a check is being made to determine length of time between current time - session file modified time, and if it's within bounds set by `static::$sessionGcMaxlifetime` then `static::$counter` is iterated.
-```
+```php
 if (time() - $file->getCTime() <= static::$sessionGcMaxlifetime) {
     static::$counter++;
 }
