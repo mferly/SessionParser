@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 try {
-    require 'SessionParser.php';
+    require './SessionParser.php';
 
     $sessionGcMaxlifetime = (int) @ini_get('session.gc_maxlifetime');
     if (empty($sessionGcMaxlifetime)) $sessionGcMaxlifetime = 0;
