@@ -7,6 +7,7 @@ Use this to iterate through active session files within the defined PHP sessions
 * [Basic Usage](#basic-usage)
 * [Prerequisites](#prerequisites)
 * [After Thoughts](#after-thoughts)
+* [Contributing](#contributing)
 * [Licence](#licence)
 * [Creator](#creator)
 
