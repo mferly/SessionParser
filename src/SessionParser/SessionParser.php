@@ -83,7 +83,7 @@ final class SessionParser implements SessionParserInterface
 
         if (!empty($sessionFolderPath)) static::$sessionFolderPath = $sessionFolderPath;
 
-        return static::fileIterator();
+        return static::directoryIterator();
     }
 
     /**
@@ -92,7 +92,7 @@ final class SessionParser implements SessionParserInterface
      * @method static int
      * @return $counter int on success, null on error.
      */
-    public static function fileIterator(): int
+    public static function directoryIterator(): int
     {
         try {
             static::$fileIterator = new \RecursiveIteratorIterator(
