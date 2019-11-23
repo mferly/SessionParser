@@ -9,7 +9,7 @@ Use this to iterate through active session files within the defined PHP sessions
 * [Licence](#licence)
 * [Creator](#creator)
 
-## Getting Started (#getting-started)
+## Getting Started
 
 **WARNING**: Don't keep these files in a `public` folder of any kind.
 
@@ -30,14 +30,14 @@ if (time() - $file->getCTime() <= static::$sessionGcMaxlifetime) {
 }
 ```
 
-## Prerequisites (#prerequisites)
+## Prerequisites
 * PHP v7.x (tested on v7.3)
 
-## After Thoughts (#after-thoughts)
+## After Thoughts
 While this program will simply `echo` the result, there is no reason this cannot be modified to write the result to a file, database, emailed to a recipient, etc.
 
-## Licence (#licence)
+## Licence
 [MIT](https://opensource.org/licenses/MIT)
 
-## Creator (#creator)
+## Creator
 [mferly](https://www.reddit.com/user/mferly)
