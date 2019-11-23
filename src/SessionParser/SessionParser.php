@@ -149,10 +149,11 @@ final class SessionParser implements SessionParserInterface
      */
     public static function fileParser(string $sessionString = ''): bool
     {
-        if (!empty($sessionString)) {
-            if (false !== strpos($sessionString, static::$needle)) {
-                return true;
-            }
+        if (
+            !empty($sessionString)
+            && false !== strpos($sessionString, static::$needle)
+        ) {
+            return true;
         }
         return false;
     }
