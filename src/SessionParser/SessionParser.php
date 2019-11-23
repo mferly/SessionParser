@@ -1,15 +1,14 @@
 <?php
 declare(strict_types=1);
 
-interface SessionParserInterface {
-
-    public static function init(int $sessionGcMaxlifetime, string $sessionFolderPath): int;
-    public static function fileIterator(): int;
-    public static function fileParser(string $sessionString): bool;
-}
+namespace SessionParser;
 
 /**
  * Class to parse session files for determining user authenticated sessions.
+ *
+ * @author mferly
+ * @website https://www.reddit.com/user/mferly
+ * @licence MIT (https://opensource.org/licenses/MIT)
  */
 final class SessionParser implements SessionParserInterface
 {
