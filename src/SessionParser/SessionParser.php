@@ -6,9 +6,13 @@ namespace SessionParser;
 /**
  * Class to parse session files for determining user authenticated sessions.
  *
- * @author mferly
- * @link https://www.reddit.com/user/mferly
- * @license MIT (https://opensource.org/licenses/MIT)
+ * @category Software
+ * @author   mferly <mferly@example.com>
+ * @license  MIT (https://opensource.org/licenses/MIT)
+ * @file     SessionParser.php
+ * @link     https://www.reddit.com/user/mferly
+ *
+ * @uses     interface SessionParserInterface
  */
 final class SessionParser implements SessionParserInterface
 {
