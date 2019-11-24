@@ -3,7 +3,8 @@ declare(strict_types=1);
 
 namespace SessionParser;
 
-interface SessionParserInterface {
+interface SessionParserInterface
+{
 
     /**
      * Initializes the program.
