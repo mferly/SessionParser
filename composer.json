@@ -1,4 +1,18 @@
 {
+    "name": "mferly/SessionParser",
+    "type": "library",
+    "description": "Use this to iterate through active session files within the defined PHP sessions folder found in php.ini to look for authenticated sessions.",
+    "keywords": ["php"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mferly",
+            "role": "Developer",
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+    },
     "require-dev": {
         "phpunit/phpunit": "^8"
     },
