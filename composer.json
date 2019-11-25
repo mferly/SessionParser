@@ -1,5 +1,5 @@
 {
-    "name": "mferly/SessionParser",
+    "name": "mferly/session-parser",
     "type": "library",
     "description": "Use this to iterate through active session files within the defined PHP sessions folder found in php.ini to look for authenticated sessions.",
     "keywords": ["php"],
