@@ -1,6 +1,8 @@
 # SessionParser
 Use this to iterate through active session files within the defined PHP sessions folder found in `php.ini`
 
+Testing Packagist sync
+
 **Hint**: your sessions directory is probably located at `/var/lib/php/sessions/`
 
 * [Getting Started](#getting-started)
