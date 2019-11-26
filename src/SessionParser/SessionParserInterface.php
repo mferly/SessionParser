@@ -16,13 +16,15 @@ interface SessionParserInterface
      */
     public static function init(string $sessionFolderPath): int;
 
+    public static function getIterator(): iterable;
+
     /**
      * Iterates through $sessionFolderPath and calls fileParser()
      *
      * @method static int
      * @return $counter int on success, null on error.
      */
-    public static function directoryIterator(): int;
+    public static function directoryIterator(iterable $directoryFiles): int;
 
     /**
      * Parses arg looking for $needle

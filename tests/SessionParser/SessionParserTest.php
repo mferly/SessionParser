@@ -31,4 +31,9 @@ final class SessionParserTest extends TestCase
     {
         $this->assertIsBool(SessionParser::fileParser());
     }
+
+    public function testMethodGetIteratorReturnsIterable(): void
+    {
+        $this->assertIsIterable(SessionParser::getIterator());
+    }
 }

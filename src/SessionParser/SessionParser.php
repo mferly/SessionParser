@@ -88,7 +88,21 @@ final class SessionParser implements SessionParserInterface
 
         if (!empty($sessionFolderPath)) static::$sessionFolderPath = $sessionFolderPath;
 
-        return static::directoryIterator();
+        return static::directoryIterator(static::getIterator());
+    }
+
+    /**
+     * Returns iterator object.
+     *
+     * @return iterable
+     */
+    public static function getIterator(): iterable
+    {
+        return new \RecursiveIteratorIterator(
+            (new \RecursiveDirectoryIterator(
+                static::$sessionFolderPath,
+                \RecursiveDirectoryIterator::SKIP_DOTS)
+            ), \RecursiveIteratorIterator::LEAVES_ONLY);
     }
 
     /**
@@ -97,16 +111,12 @@ final class SessionParser implements SessionParserInterface
      * @return int
      * @throws \Exception
      */
-    public static function directoryIterator(): int
+    public static function directoryIterator(iterable $directoryFiles = []): int
     {
         try {
-            static::$fileIterator = new \RecursiveIteratorIterator(
-                (new \RecursiveDirectoryIterator(
-                    static::$sessionFolderPath,
-                    \RecursiveDirectoryIterator::SKIP_DOTS)
-                ), \RecursiveIteratorIterator::LEAVES_ONLY);
+            if (empty($directoryFiles)) return 0;
 
-            foreach (static::$fileIterator as $file) {
+            foreach ($directoryFiles as $file) {
                 if ($file->isReadable()) {
                     if ($file->getSize() > 0) {
 
