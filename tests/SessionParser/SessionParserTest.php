@@ -14,7 +14,7 @@ final class SessionParserTest extends TestCase
 
     public function testSessionDirectoryIsReadable(): void
     {
-        $this->assertDirectoryIsReadable('/var/lib/php/sessions/');
+        $this->assertDirectoryIsReadable(__DIR__);
     }
 
     public function testMethodInitReturnsInt(): void
