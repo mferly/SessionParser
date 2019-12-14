@@ -53,7 +53,7 @@ final class SessionParser implements SessionParserInterface
      *
      * @var string
      */
-    private static $sessionFolderPath = '/var/lib/php/sessions/';
+    private static $sessionFolderPath = __DIR__;
 
     /**
      * This is used to check length (in time()) of authenticated session.

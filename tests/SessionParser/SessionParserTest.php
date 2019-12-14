@@ -9,7 +9,7 @@ final class SessionParserTest extends TestCase
 {
     public function testSessionDirectoryExists(): void
     {
-        $this->assertDirectoryExists('/var/lib/php/sessions/');
+        $this->assertDirectoryExists(__DIR__);
     }
 
     public function testSessionDirectoryIsReadable(): void
